@@ -1,0 +1,784 @@
+$desktop:845px;
+$mobile:445px;
+$xbig:8vh;
+$big:6vh;
+$medium:4vh;
+$small:3vh;
+$xsmall:1vh;
+$font-cursive:'Gloria Hallelujah',
+cursive;
+$font-sans-1:'Open Sans',
+sans-serif;
+$font-sans-2:'Ubuntu',
+sans-serif;
+$font-sans-3: 'Mukta',
+sans-serif;
+$font-sans-4: 'Poppins',
+sans-serif;
+$font-mono:'Source Code Pro',
+monospace;
+$normal: normal;
+$screen: screen;
+$overlay:overlay;
+$multiply:multiply;
+$darken: darken;
+$lighten:lighten;
+$color-burn:color-burn;
+$color-dodge:color-dodge;
+$difference:difference;
+$exclusion:exclusion;
+$luminosity:luminosity;
+$color:color;
+$saturation:saturation;
+$hue:hue; //colors
+$white:white;
+$black:black;
+$pink:pink;
+$red:red;
+$green:green;
+$blue:blue; //mixins 
+@mixin border-mixin($some-color, $some-number) {
+    border-color: $some-color;
+    border-style: solid;
+    border-width: $some-number;
+}
+
+@mixin rotate-mixin($some-deg) {
+    transform: rotate($some-deg);
+    transform-origin: 20% 80%;
+}
+
+@mixin color-mixin($some-color) {
+    color: $some-color !important;
+}
+
+@mixin background-mixin($some-color) {
+    background-color: $some-color !important;
+}
+
+@mixin padding-mixin($some-number) {
+    padding: $some-number;
+}
+
+@mixin font-size-mixin($some-number) {
+    font-size: $some-number;
+}
+
+@mixin blend-mode-mixin($mode) {
+    mix-blend-mode: $mode;
+}
+
+@mixin col-count-mixin($some-number) {
+    -webkit-column-count: $some-number;
+    -moz-column-count: $some-number;
+    column-count: $some-number;
+}
+
+@mixin grid-mixin($some-number) {
+    display: grid;
+    grid: 150px / $some-number;
+    grid-gap: 5px;
+}
+
+.dw-grid-2 {
+    @include grid-mixin(auto auto);
+}
+
+.dw-grid-3 {
+    @include grid-mixin(auto auto auto);
+}
+
+.dw-grid-4 {
+    @include grid-mixin(auto auto auto auto);
+}
+
+.dw-grid-5 {
+    @include grid-mixin(auto auto auto auto auto);
+}
+
+.dw-grid-6 {
+    @include grid-mixin(auto auto auto auto auto auto);
+}
+
+.dw-col-2 {
+    @include col-count-mixin(2);
+}
+
+.dw-col-3 {
+    @include col-count-mixin(3);
+}
+
+.dw-col-4 {
+    @include col-count-mixin(4);
+} //mix-blend-mode: darken
+.dw-mix-darken-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($darken);
+    }
+}
+
+.dw-mix-darken-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($darken);
+    }
+}
+
+.dw-mix-darken-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($darken);
+    }
+}
+
+.dw-mix-darken-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($darken);
+    }
+} //mix-blend-mode: screen
+.dw-mix-screen-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($screen);
+    }
+}
+
+.dw-mix-screen-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($screen);
+    }
+}
+
+.dw-mix-screen-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($screen);
+    }
+}
+
+.dw-mix-screen-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($screen);
+    }
+} //mix-blend-mode: overlay
+.dw-mix-overlay-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($overlay);
+    }
+}
+
+.dw-mix-overlay-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($overlay);
+    }
+}
+
+.dw-mix-overlay-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($overlay);
+    }
+}
+
+.dw-mix-overlay-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($overlay);
+    }
+} //mix-blend-mode: multiply
+.dw-mix-multiply-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($multiply);
+    }
+}
+
+.dw-mix-multiply-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($multiply);
+    }
+}
+
+.dw-mix-multiply-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($multiply);
+    }
+}
+
+.dw-mix-multiply-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($multiply);
+    }
+}
+
+//mix-blend-mode: lighten
+.dw-mix-lighten-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($lighten);
+    }
+}
+
+.dw-mix-lighten-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($lighten);
+    }
+}
+
+.dw-mix-lighten-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($lighten);
+    }
+}
+
+.dw-mix-lighten-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($lighten);
+    }
+} //mix-blend-mode: color-dodge
+.dw-mix-color-dodge-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($color-dodge);
+    }
+}
+
+.dw-mix-color-dodge-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($color-dodge);
+    }
+}
+
+.dw-mix-color-dodge-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($color-dodge);
+    }
+}
+
+.dw-mix-color-dodge-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($color-dodge);
+    }
+}
+
+//mix-blend-mode: color-burn
+.dw-mix-color-burn-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($color-burn);
+    }
+}
+
+.dw-mix-color-burn-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($color-burn);
+    }
+}
+
+.dw-mix-color-burn-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($color-burn);
+    }
+}
+
+.dw-mix-color-burn-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($color-burn);
+    }
+} //mix-blend-mode: saturation
+.dw-mix-saturation-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($saturation);
+    }
+}
+
+.dw-mix-saturation-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($saturation);
+    }
+}
+
+.dw-mix-saturation-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($saturation);
+    }
+}
+
+.dw-mix-saturation-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($saturation);
+    }
+}
+
+//mix-blend-mode: color
+.dw-mix-color-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($color);
+    }
+}
+
+.dw-mix-color-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($color);
+    }
+}
+
+.dw-mix-color-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($color);
+    }
+}
+
+.dw-mix-color-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($color);
+    }
+}
+
+//mix-blend-mode: luminosity
+.dw-mix-luminosity-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($luminosity);
+    }
+}
+
+.dw-mix-luminosity-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($luminosity);
+    }
+}
+
+.dw-mix-luminosity-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($luminosity);
+    }
+}
+
+.dw-mix-luminosity-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($luminosity);
+    }
+}
+
+//mix-blend-mode: exclusion
+.dw-mix-exclusion-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($exclusion);
+    }
+}
+
+.dw-mix-exclusion-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($exclusion);
+    }
+}
+
+.dw-mix-exclusion-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($exclusion);
+    }
+}
+
+.dw-mix-exclusion-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($exclusion);
+    }
+} //mix-blend-mode: hue
+.dw-mix-hue-pink {
+    @include background-mixin($pink);
+    img {
+        @include blend-mode-mixin($hue);
+    }
+}
+
+.dw-mix-hue-red {
+    @include background-mixin($red);
+    img {
+        @include blend-mode-mixin($hue);
+    }
+}
+
+.dw-mix-hue-green {
+    @include background-mixin($green);
+    img {
+        @include blend-mode-mixin($hue);
+    }
+}
+
+.dw-mix-hue-blue {
+    @include background-mixin($blue);
+    img {
+        @include blend-mode-mixin($hue);
+    }
+} //dw-rotate
+.dw-rotate-180 {
+    @include rotate-mixin(180deg);
+}
+
+.dw-rotate-90 {
+    @include rotate-mixin(90deg);
+}
+
+.dw-rotate-45 {
+    @include rotate-mixin(45deg);
+}
+
+.dw-rotate-40 {
+    @include rotate-mixin(40deg);
+}
+
+.dw-rotate-35 {
+    @include rotate-mixin(35deg);
+}
+
+.dw-rotate-30 {
+    @include rotate-mixin(30deg);
+}
+
+.dw-rotate-25 {
+    @include rotate-mixin(25deg);
+}
+
+.dw-rotate-20 {
+    @include rotate-mixin(20deg);
+}
+
+.dw-rotate-15 {
+    @include rotate-mixin(15deg);
+}
+
+.dw-rotate-10 {
+    @include rotate-mixin(10deg);
+}
+
+.dw-rotate-5 {
+    @include rotate-mixin(5deg);
+}
+
+.dw-rotate-3 {
+    @include rotate-mixin(3deg);
+}
+
+.dw-rotate-1 {
+    @include rotate-mixin(1deg);
+}
+
+// minus rotate
+.dw-rotate-m180 {
+    @include rotate-mixin(-180deg);
+}
+
+.dw-rotate-m90 {
+    @include rotate-mixin(-90deg);
+}
+
+.dw-rotate-m45 {
+    @include rotate-mixin(-45deg);
+}
+
+.dw-rotate-m40 {
+    @include rotate-mixin(-40deg);
+}
+
+.dw-rotate-m35 {
+    @include rotate-mixin(-35deg);
+}
+
+.dw-rotate-m30 {
+    @include rotate-mixin(-30deg);
+}
+
+.dw-rotate-m25 {
+    @include rotate-mixin(-25deg);
+}
+
+.dw-rotate-m20 {
+    @include rotate-mixin(-20deg);
+}
+
+.dw-rotate-m15 {
+    @include rotate-mixin(-15deg);
+}
+
+.dw-rotate-m10 {
+    @include rotate-mixin(-10deg);
+}
+
+.dw-rotate-m5 {
+    @include rotate-mixin(-5deg);
+}
+
+.dw-rotate-m3 {
+    @include rotate-mixin(-3deg);
+}
+
+.dw-rotate-m1 {
+    @include rotate-mixin(-1deg);
+}
+
+//border
+.dw-border-solid-black-5 {
+    @include border-mixin($black, 5px)
+}
+
+.dw-border-solid-black-1 {
+    @include border-mixin($black, 1px)
+}
+
+.dw-border-solid-white-5 {
+    @include border-mixin($black, 5px)
+}
+
+.dw-border-solid-white-1 {
+    @include border-mixin($black, 1px)
+}
+
+.dw-border-solid-blue-5 {
+    @include border-mixin($blue, 5px)
+}
+
+.dw-border-solid-blue-1 {
+    @include border-mixin($blue, 1px)
+}
+
+.dw-border-solid-red-5 {
+    @include border-mixin($red, 5px)
+}
+
+.dw-border-solid-red-1 {
+    @include border-mixin($red, 1px)
+}
+
+.dw-border-solid-green-5 {
+    @include border-mixin($green, 5px)
+}
+
+.dw-border-solid-green-1 {
+    @include border-mixin($green, 1px)
+}
+
+.dw-border-dotted-black-5 {
+    @include border-mixin($black, 5px)
+}
+
+.dw-border-dotted-black-1 {
+    @include border-mixin($black, 1px)
+}
+
+.dw-border-dotted-blue-5 {
+    @include border-mixin($blue, 5px)
+}
+
+.dw-border-dotted-blue-1 {
+    @include border-mixin($blue, 1px)
+}
+
+.dw-border-dotted-red-5 {
+    @include border-mixin($red, 5px)
+}
+
+.dw-border-dotted-red-1 {
+    @include border-mixin($red, 1px)
+}
+
+.dw-border-dotted-green-5 {
+    @include border-mixin($green, 5px)
+}
+
+.dw-border-dotted-green-1 {
+    @include border-mixin($green, 1px)
+}
+
+.dw-border-dashed-blue-5 {
+    @include border-mixin($blue, 5px)
+}
+
+.dw-border-dashed-blue-1 {
+    @include border-mixin($blue, 1px)
+}
+
+.dw-border-dashed-red-5 {
+    @include border-mixin($red, 5px)
+}
+
+.dw-border-dashed-red-1 {
+    @include border-mixin($red, 1px)
+}
+
+.dw-border-dashed-green-5 {
+    @include border-mixin($green, 5px)
+}
+
+.dw-border-dashed-green-1 {
+    @include border-mixin($green, 1px)
+}
+
+.dw-border-groove-blue-5 {
+    @include border-mixin($blue, 5px)
+}
+
+.dw-border-groove-blue-1 {
+    @include border-mixin($blue, 1px)
+}
+
+.dw-border-groove-red-5 {
+    @include border-mixin($red, 5px)
+}
+
+.dw-border-groove-red-1 {
+    @include border-mixin($red, 1px)
+}
+
+.dw-border-groove-green-5 {
+    @include border-mixin($green, 5px)
+}
+
+.dw-border-groove-green-1 {
+    @include border-mixin($green, 1px)
+}
+
+.dw-border-outset-blue-5 {
+    @include border-mixin($blue, 5px)
+}
+
+.dw-border-outset-blue-1 {
+    @include border-mixin($blue, 1px)
+}
+
+.dw-border-outset-red-5 {
+    @include border-mixin($red, 5px)
+}
+
+.dw-border-outset-red-1 {
+    @include border-mixin($red, 1px)
+}
+
+.dw-border-outset-green-5 {
+    @include border-mixin($green, 5px)
+}
+
+.dw-border-outset-green-1 {
+    @include border-mixin($green, 1px)
+}
+
+.dw-border-inset-blue-5 {
+    @include border-mixin($blue, 5px)
+}
+
+.dw-border-inset-blue-1 {
+    @include border-mixin($blue, 1px)
+}
+
+.dw-border-inset-red-5 {
+    @include border-mixin($red, 5px)
+}
+
+.dw-border-inset-red-1 {
+    @include border-mixin($red, 1px)
+}
+
+.dw-border-inset-green-5 {
+    @include border-mixin($green, 5px)
+}
+
+.dw-border-inset-green-1 {
+    @include border-mixin($green, 1px)
+}
+
+.dw-border-ridge-blue-5 {
+    @include border-mixin($blue, 5px)
+}
+
+.dw-border-ridge-blue-1 {
+    @include border-mixin($blue, 1px)
+}
+
+.dw-border-ridge-red-5 {
+    @include border-mixin($red, 5px)
+}
+
+.dw-border-ridge-red-1 {
+    @include border-mixin($red, 1px)
+}
+
+.dw-border-ridge-green-5 {
+    @include border-mixin($green, 5px)
+}
+
+.dw-border-ridge-green-1 {
+    @include border-mixin($green, 1px)
+}
+
+h1 {
+    font-family: $font-sans-1;
+    @include padding-mixin($xsmall);
+    @include font-size-mixin($big);
+}
+
+h2 {
+    font-family: $font-mono;
+    @include padding-mixin($xsmall);
+    @include font-size-mixin($medium);
+}
+
+h3 {
+    font-family: $font-sans-1;
+    @include padding-mixin($xsmall);
+}
+
+h4 {
+    font-family: $font-sans-3;
+    @include padding-mixin($xsmall);
+}
+
+h5 {
+    font-family: $font-sans-2;
+    @include padding-mixin($xsmall);
+    @include font-size-mixin($small);
+}
+
+h6 {
+    font-family: $font-sans-4;
+    @include padding-mixin($xsmall);
+    @include font-size-mixin($xsmall);
+}
+
+p {
+    font-family: $font-sans-3;
+    @include padding-mixin($xsmall);
+    @include font-size-mixin($small);
+}
