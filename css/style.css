@@ -106,11 +106,21 @@ font-family: 'Roboto',sans-serif;
     color: var(--dw-banana);
 }
 
+.dw-dark-bg{
+
+    background: rgba(2, 247, 255, 0.335)
+
+}
+
 body {
     margin: 0;
     box-sizing: border-box;
     word-wrap: break-word;
     text-shadow: 1px 1px #000000;
+}
+
+li{
+    text-transform: uppercase;
 }
 
 p {
