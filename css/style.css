@@ -119,8 +119,10 @@ body {
     text-shadow: 1px 1px #000000;
 }
 
+
 li{
     text-transform: uppercase;
+    list-style: none;
 }
 
 p {
@@ -224,4 +226,63 @@ h6 {
    text-decoration: none;
 
 
+}
+
+footer {
+      
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-top: 0px solid white;       
+        background-color: rgba(0,0,0, 0.4);
+        color:white;
+        text-align: center;
+  }
+
+footer div{
+
+        margin: auto;
+        text-align: center;
+        width: 60%; 
+        padding: 10px;
+      
+}
+
+footer ul{
+
+  font-family: 'Poppins', sans-serif;
+  font-stretch: expanded;
+  font-size: 1.4vw;
+  list-style: none;
+
+
+}
+
+footer ul a{
+
+         color:#f5f5f5;
+}
+
+footer ul a:hover{
+
+    color:#fd7c6e;
+}
+
+footer ul a:link {
+  color:#f5f5f5;
+}
+
+/* visited link */
+footer ul a:visited {
+  color:#f5f5f5;
+}
+
+/* mouse over link */
+footer ul a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+footer ul a:active {
+  color: blue;
 }
